@@ -1,0 +1,199 @@
+xhtml, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  background: #f5e6ca;
+  font-family: 'Courier', monospace;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+ 
+ 
+ #root {
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  background: none;
+  margin: 0 auto;
+ }
+ 
+ 
+ /* Headings */
+ h1 {
+  font-size: 2.5rem;
+  color: #6b4f1d;
+  margin-bottom: 0.5rem;
+ }
+ h2 {
+  font-size: 1.5rem;
+  color: #8b5a2b;
+  margin-bottom: 1rem;
+ }
+ 
+ 
+ /* Cookie Image */
+ .cookie {
+  width: 300px;
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease;
+  user-select: none;
+ }
+ .cookie:hover {
+  filter: drop-shadow(0 0 20px rgba(139, 90, 43, 0.5));
+ }
+ .cookie.clicked {
+  transform: scale(1.1) rotate(-5deg);
+ }
+ 
+ 
+ /* Falling Cookies */
+ .falling-cookie {
+  position: fixed;
+  top: -100px;
+  width: 40px;
+  animation: fall 3s linear forwards;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.9;
+ }
+ @keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+ }
+ 
+ 
+ /* Floating +n */
+ .floater {
+  position: fixed;
+  font-size: 32px;
+  font-weight: bold;
+  color: #8b5a2b;
+  animation: floatUp 1s ease-out forwards;
+  pointer-events: none;
+  user-select: none;
+ }
+ @keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1.4);
+  }
+  50% {
+    transform: translateY(-25px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.8);
+  }
+ }
+ 
+ 
+ /* Reset Cookies Button */
+ .reset-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #8b5a2b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+ }
+ .reset-button:hover {
+  background-color: #6b4f1d;
+ }
+ 
+ 
+ /* Upgrade Table */
+ .upgrade-table {
+  margin-top: 2rem;
+ }
+ .upgrade-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  overflow: hidden;
+  color: #6b4f1d;
+ }
+ .upgrade-table th,
+ .upgrade-table td {
+  padding: 0.5rem;
+  border: 1px solid #d2b48c;
+  text-align: center;
+ }
+ .upgrade-table th {
+  background-color: #f5e6ca;
+  color: #6b4f1d;
+ }
+ .upgrade-button {
+  padding: 0.3rem 0.8rem;
+  font-size: 1rem;
+  background-color: #8b5a2b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+ }
+ .upgrade-button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+ }
+ .upgrade-button:hover:not(:disabled) {
+  background-color: #6b4f1d;
+ }
+ 
+ 
+ /* Reset Click Value Button */
+ .reset-upgrade-button {
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.9rem;
+  background-color: #d2691e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+ }
+ .reset-upgrade-button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+ }
+ .reset-upgrade-button:hover:not(:disabled) {
+  background-color: #a0522d;
+ }
+ 
+ 
+ /* Golden Cookie */
+ .golden-cookie {
+  position: fixed;
+  width: 60px;
+  cursor: pointer;
+  animation: pulseGlow 1.5s infinite;
+  user-select: none;
+  z-index: 10;
+ }
+ @keyframes pulseGlow {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 5px gold);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 20px gold);
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 5px gold);
+  }
+ }
+ 
